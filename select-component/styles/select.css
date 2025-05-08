@@ -1,0 +1,113 @@
+.select-container {
+  position: relative;
+  width: 100%;
+}
+
+.select-trigger {
+  display: flex;
+  height: 40px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  background-color: white;
+  padding: 0 12px;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+}
+
+.select-trigger:focus {
+  box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.5);
+}
+
+.select-trigger.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.select-placeholder {
+  color: #64748b;
+}
+
+.select-dropdown {
+  position: absolute;
+  z-index: 50;
+  margin-top: 4px;
+  max-height: 240px;
+  min-width: 8rem;
+  width: 100%;
+  overflow: auto;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  background-color: white;
+  padding: 4px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.select-item {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  user-select: none;
+  align-items: center;
+  border-radius: 4px;
+  padding: 6px 8px 6px 32px;
+  font-size: 14px;
+  outline: none;
+}
+
+.select-item:hover,
+.select-item.highlighted {
+  background-color: #f1f5f9;
+}
+
+.select-item.selected {
+  background-color: #f1f5f9;
+}
+
+.select-item.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.select-item-check {
+  position: absolute;
+  left: 8px;
+  display: flex;
+  height: 14px;
+  width: 14px;
+  align-items: center;
+  justify-content: center;
+}
+
+.select-icon {
+  height: 16px;
+  width: 16px;
+  opacity: 0.5;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .select-trigger {
+    background-color: #1e293b;
+    border-color: #334155;
+    color: #f8fafc;
+  }
+
+  .select-placeholder {
+    color: #94a3b8;
+  }
+
+  .select-dropdown {
+    background-color: #1e293b;
+    border-color: #334155;
+  }
+
+  .select-item:hover,
+  .select-item.highlighted,
+  .select-item.selected {
+    background-color: #334155;
+  }
+}
